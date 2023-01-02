@@ -1,0 +1,132 @@
+.todo_wrap {
+  width: 100%;
+  height: 100vh;
+  background: #c0adad;
+}
+.container {
+  width: 100%;
+  max-width: 640px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.todo_inner {
+  width: 100%;
+  position: relative;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 50px;
+  justify-content: center;
+}
+.todo_filter_wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+  background-color: rgb(61, 61, 121);
+}
+.todo_filter_wrap .mode {
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+  background-color: azure;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+}
+.todo_filter_wrap .mode span {
+  color: #010101;
+  font-size: 10px;
+}
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.filters button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.filters button span {
+  font-size: 16px;
+  color: #eaeaea;
+}
+
+.todo_data_wrap {
+  border-top: 1px solid #eaeaea;
+  width: 100%;
+  min-height: 360px;
+  padding: 20px;
+  background-color: rgb(73, 73, 112);
+}
+.todo_data_wrap ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.todo_data_wrap li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.data {
+  display: flex;
+  gap: 5px;
+}
+.data p {
+  color: #fafafa;
+}
+.delete span {
+  color: #fafafa;
+}
+.todo_input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 104px;
+  padding: 20px;
+
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+  background-color: rgb(61, 61, 121);
+}
+.todo_input input {
+  flex: 1;
+  height: 100%;
+  font-size: 20px;
+  border-top-left-radius: 20px;
+  padding-left: 20px;
+  border-bottom-left-radius: 20px;
+  outline: none;
+  border: 0;
+}
+
+.todo_input button {
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: yellow;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 20px 0;
+}
+.todo_input button span {
+  font-size: 18px;
+  color: #0e0d0d;
+  font-weight: bold;
+}

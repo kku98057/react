@@ -1,0 +1,16 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+ul,
+li {
+  list-style: none;
+}
+button {
+  all: unset;
+  cursor: pointer;
+}
+html.dark body {
+  background: #010101;
+}
