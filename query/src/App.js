@@ -6,6 +6,11 @@ import Root from "./pages/Root";
 import Contents from "./pages/Contents";
 import ContentsDetail from "./pages/ContentsDetail";
 import Products from "./pages/Products";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+
+// Create a client
+const queryClient = new QueryClient();
 
 function App() {
   const router = createBrowserRouter([
@@ -34,9 +39,12 @@ function App() {
     },
   ]);
   return (
-    <RouterProvider router={router}>
-      <div className="App"></div>
-    </RouterProvider>
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router}>
+        <div className="App"></div>
+      </RouterProvider>
+      <ReactQueryDevtools initialIsOpen={true} />
+    </QueryClientProvider>
   );
 }
 

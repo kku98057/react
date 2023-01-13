@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export default function useProducts({ salesOnly }) {
-  const [products, setData] = useState([]);
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState();
 
@@ -11,7 +11,7 @@ export default function useProducts({ salesOnly }) {
     fetch(`/products${salesOnly ? "_sale" : ""}.json`)
       .then((res) => res.json())
       .then((data) => {
-        setData(data);
+        setProducts(data);
         console.log("dldidi");
       })
       .catch(() => setError("에러가발생했음"))
