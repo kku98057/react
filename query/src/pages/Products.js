@@ -4,13 +4,26 @@ import ToggleBtn from "../components/ToggleBtn";
 
 function Products(props) {
   const [show, setShow] = useState(true);
-  const toggleHanlder = () => {
-    setShow((prev) => !prev);
-  };
+  const [show2, setShow2] = useState(true);
+
   return (
-    <div className="products_wrap">
-      <ToggleBtn toggleHanlder={toggleHanlder} />
-      {show && <Product />}
+    <div className="products_wrap" style={{ display: "flex" }}>
+      <div>
+        <ToggleBtn
+          toggleHanlder={() => {
+            setShow((prev) => !prev);
+          }}
+        />
+        {show && <Product id="check" />}
+      </div>
+      <div>
+        <ToggleBtn
+          toggleHanlder={() => {
+            setShow2((prev) => !prev);
+          }}
+        />
+        {show2 && <Product id="check2" />}
+      </div>
     </div>
   );
 }
