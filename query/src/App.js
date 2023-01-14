@@ -15,7 +15,6 @@ function App() {
       children: [
         {
           index: true,
-
           element: <Home />,
         },
         {
@@ -39,5 +38,4 @@ function App() {
     </RouterProvider>
   );
 }
-
 export default App;
