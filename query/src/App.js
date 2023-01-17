@@ -20,7 +20,6 @@ function App() {
       children: [
         {
           index: true,
-
           element: <Home />,
         },
         {
@@ -47,5 +46,4 @@ function App() {
     </QueryClientProvider>
   );
 }
-
 export default App;

@@ -16,7 +16,6 @@ export default function useProducts({ salesOnly }) {
       })
       .catch(() => setError("에러가발생했음"))
       .finally(() => setLoading(false));
-
     return () => {
       console.log("언마운트");
     };
