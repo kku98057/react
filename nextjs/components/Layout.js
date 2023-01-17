@@ -1,3 +1,4 @@
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import Footer from "./Footer";
 import Header from "./Header";
