@@ -5,7 +5,7 @@ import styles from "./ListsCard.module.css";
 function ListsCard({ title, src, des }) {
   const loader = (src) => {
     console.log(src, src.width);
-    return src.src ? src.src : src;
+    return src.src;
   };
 
   return (
