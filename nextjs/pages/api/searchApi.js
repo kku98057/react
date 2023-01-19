@@ -5,7 +5,7 @@ export default class Search {
   async search(keyword) {
     return keyword
       ? this.#searchByKeyword(keyword)
-      : this.#searchByNonKeyword("");
+      : this.#searchByNonKeyword();
   }
   #searchByKeyword(keyword) {
     return axios
@@ -23,7 +23,16 @@ export default class Search {
       })
       .then((res) => res.data);
   }
-  #searchByNonKeyword() {
-    alert("lol");
+  #searchByNonKeyword(keyword) {
+    return axios
+      .create({
+        baseURL: "https://yts.mx/api/v2/",
+      })
+      .get("list_movies.json", {
+        params: {
+          limit: 50,
+        },
+      })
+      .then((res) => res.data);
   }
 }

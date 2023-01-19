@@ -7,23 +7,33 @@ import Search from "../api/searchApi";
 import { useMovieContext } from "../../context/SearchContext";
 
 // https://yts.mx/api/v2/list_movies.json
-// 여기부터다시
+
 function SearchList(props) {
   const { query } = useRouter();
   const { mov } = useMovieContext();
-  console.log(mov);
+  const searchResult = query.SearchResult;
+
   const {
     isLoading,
     error,
     data: lists,
-  } = useQuery(["lists", query.SearchResult], async () =>
-    mov.search(query.SearchResult)
-  );
+  } = useQuery(["lists", searchResult], async () => mov.search(searchResult));
   return (
     <div>
-      <div className="que">{query.SearchResult}</div>
       {error && <p>에러</p>}
-      {isLoading && <p>로딩중</p>}
+      {isLoading && (
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "100vh",
+          }}
+        >
+          <p>로딩중.</p>
+        </div>
+      )}
       <ul style={{ display: "flex", flexWrap: "wrap" }}>
         {lists?.data.movies ? (
           lists?.data.movies.map((list) => (
@@ -32,12 +42,25 @@ function SearchList(props) {
               title={list.title}
               src={list.large_cover_image}
               rating={list.rating}
+              link={searchResult}
+              id={list.id}
+              list={list}
             />
           ))
         ) : isLoading ? (
           ""
         ) : (
-          <p>결과가없습니다.</p>
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              height: "100vh",
+            }}
+          >
+            <p>결과가없습니다.</p>
+          </div>
         )}
       </ul>
     </div>
