@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import DarkmodeBtn from "./DarkmodeBtn";
 import Nav from "./Nav";
+import Search from "./Search";
 
 function Header(props) {
   return (
@@ -22,6 +23,7 @@ function Header(props) {
           </svg>
           <span className="ml-3 text-xl">Tailblocks</span>
         </a>
+        <Search />
         <Nav />
         <DarkmodeBtn />
       </div>

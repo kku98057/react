@@ -14,7 +14,6 @@ function Nav(props) {
       <Link href="/Lists" className="mr-5 hover:text-gray-900">
         리스트
       </Link>
-
       <a className="mr-5 hover:text-gray-900">문의하기</a>
     </nav>
   );
