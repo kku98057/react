@@ -1,0 +1,19 @@
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.user p {
+  font-weight: bold;
+}
+
+.user .img img {
+  border-radius: 50px;
+  overflow: hidden;
+}
+@media all and (max-width: 768px) {
+  .user p {
+    display: none;
+  }
+}

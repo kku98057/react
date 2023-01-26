@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "../../styles/components/navbar.module.css";
 import { BsFillPencilFill } from "react-icons/Bs";
-import { login } from "../api/firebase";
+import { login, logOut, onUserStateChange } from "../api/firebase";
+import User from "./User";
+import Button from "./ui/button";
+import { useAuthContext } from "./context/AuthContext";
 
 function Navbar(props) {
+  const { user, login, logOut } = useAuthContext();
+
   return (
     <div className={styles.nav}>
       <ul>
@@ -18,16 +23,28 @@ function Navbar(props) {
             Carts
           </Link>
         </li>
-        <li>
-          <Link href="/products/new/[id]">
-            <BsFillPencilFill />
-          </Link>
-        </li>
-        <li>
-          <button type="button" onClick={login}>
-            <span>login</span>
-          </button>
-        </li>
+        {user && user.isAdmin && (
+          <li>
+            <Link href="/products/New" as="/products/new">
+              <BsFillPencilFill />
+            </Link>
+          </li>
+        )}
+        {user && (
+          <li>
+            <User user={user} />
+          </li>
+        )}
+        {!user && (
+          <li>
+            <Button onClick={login} text="Login"></Button>
+          </li>
+        )}
+        {user && (
+          <li>
+            <Button onClick={logOut} text="Logout"></Button>
+          </li>
+        )}
       </ul>
     </div>
   );

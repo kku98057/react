@@ -9,6 +9,21 @@ const nextConfig = {
     REACT_APP_FIREBASE_PROJECT_ID: "shoppy-bd1c0",
     UNDSIGNEDKEY: "eu4vtx3f",
   },
+
+  async redirects() {
+    return [
+      {
+        source: "/cart",
+        destination: "/",
+        permanent: false,
+      },
+      {
+        source: "/products/new",
+        destination: "/",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
