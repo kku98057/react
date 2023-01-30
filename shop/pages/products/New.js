@@ -3,6 +3,8 @@ import ProtectedRoute from "../ProtectedRoute";
 import Button from "../components/ui/Button";
 import Image from "next/image";
 import { uploadImage } from "../api/uploader";
+import { addNewProduct } from "../api/firebase";
+
 function New(props) {
   const [product, setProduct] = useState({});
   const [file, setFile] = useState();
@@ -10,6 +12,8 @@ function New(props) {
     e.preventDefault();
     uploadImage(file).then((url) => {
       console.log(url);
+      console.log(product);
+      addNewProduct(product, url);
     });
     // 제품사진 업로드하고 url 획득
     // filrebase새로운제품 추가
@@ -89,7 +93,7 @@ function New(props) {
           type="text"
           name="option"
           id=""
-          defaultValue={product.option ?? ""}
+          defaultValue={product.options ?? ""}
           placeholder="옵션들(콤마(,)로 구분)"
           required
         />
