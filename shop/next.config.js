@@ -8,6 +8,9 @@ const nextConfig = {
       "https://shoppy-bd1c0-default-rtdb.asia-southeast1.firebasedatabase.app",
     REACT_APP_FIREBASE_PROJECT_ID: "shoppy-bd1c0",
     UNDSIGNEDKEY: "eu4vtx3f",
+    REACT_APP_CLOUDINARY_PRESET: "eu4vtx3f",
+    REACT_APP_CLOUDINARY_URL:
+      "https://api.cloudinary.com/v1_1/dixmm7nkt/image/upload",
   },
 
   async redirects() {
